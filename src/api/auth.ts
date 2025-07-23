@@ -14,6 +14,7 @@ interface AuthResponse {
 // Registro de usuario
 export const registerUser = async (body: UserCredentials): Promise<AxiosResponse<AuthResponse> | null> => {
   try {
+    console.log({body})
     const payload = { "email": "eve.holt@reqres.in", "password": "pistol" }
     const response = await authApi.post(`/register`, payload);
     console.log("register response:", response);
@@ -27,6 +28,7 @@ export const registerUser = async (body: UserCredentials): Promise<AxiosResponse
 // Login de usuario
 export const loginUser = async (body: UserCredentials): Promise<AxiosResponse<AuthResponse> | null> => {
   try {
+    console.log({body})
     const payload = { "email": "eve.holt@reqres.in", "password": "pistol" }
     const response = await authApi.post(`/login`, payload);
     return response;
